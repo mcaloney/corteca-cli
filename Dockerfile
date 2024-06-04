@@ -3,9 +3,11 @@ ARG GO_VERSION=1.21
 FROM golang:${GO_VERSION}-alpine AS builder-image
 RUN apk update && apk add \
     binutils \
+    build-base \
     make \
     rpm \
     ruby \
+    ruby-dev \
     tar \
     msitools \
     uuidgen \
