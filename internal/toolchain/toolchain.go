@@ -55,6 +55,9 @@ func Invoke(imageName, appDir, configFile string, buildOptions configuration.Bui
 	if !buildOptions.SkipHostEnv {
 		inheritEnvironment(&args)
 	}
+	if buildOptions.User != "" {
+		args = append(args, "-u", buildOptions.User)
+	}
 	for key, value := range buildOptions.Env {
 		args = append(args, "--env", fmt.Sprintf("%s=%s", key, value))
 	}

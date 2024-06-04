@@ -32,6 +32,7 @@ const (
 type BuildOptions struct {
 	SkipHostEnv bool              `yaml:"skipHostEnv,omitempty"`
 	Env         map[string]string `yaml:"env,omitempty"`
+	User        string            `yaml:"user,omitempty"`
 }
 
 type AppSettings struct {
@@ -483,4 +484,3 @@ func setKeyValuePair(v map[string]any, fieldPath string, value any) error {
 		}
 	}
 }
-
