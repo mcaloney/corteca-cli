@@ -55,7 +55,7 @@ type AppSettings struct {
 	DUID         string            `yaml:"duid"`
 	Dependencies Dependencies      `yaml:"dependencies"`
 	Env          map[string]string `yaml:"env"`
-	Entrypoint   string            `yaml:"entrypoint"`
+	Entrypoint   []string          `yaml:"entrypoint"`
 	Runtime      specs.Spec        `yaml:"runtime"`
 }
 

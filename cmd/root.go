@@ -141,8 +141,8 @@ func validateAppSettings() error {
 	if config.App.DUID == "" {
 		return fmt.Errorf("DUID has not been generated successfully")
 	}
-	if config.App.Entrypoint == "" {
-		config.App.Entrypoint = filepath.ToSlash(filepath.Join("/bin", config.App.Name))
+	if len(config.App.Entrypoint) == 0 {
+		config.App.Entrypoint = []string{filepath.ToSlash(filepath.Join("/bin", config.App.Name))}
 	}
 	return nil
 }
